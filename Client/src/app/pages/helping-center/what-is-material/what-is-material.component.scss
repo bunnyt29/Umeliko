@@ -1,0 +1,19 @@
+@use '../../../../assets/style/variables';
+
+ul li {
+    font-size: 20px;
+}
+
+span {
+    color: variables.$tertiary-color;
+}
+
+.material {
+    width: 50%;
+    height: 50%;
+}
+
+hr {
+    width: 100%;
+    color: variables.$primary-color;
+}

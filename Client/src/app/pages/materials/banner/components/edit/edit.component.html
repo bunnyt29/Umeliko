@@ -1,0 +1,65 @@
+<navigation-menu></navigation-menu>
+<div class="banner-container">
+  <div class="banner-holder">
+    <form [formGroup]="bannerForm">
+      <div class="form-cover-image"
+           (mouseenter)="hover = true"
+           (mouseleave)="hover = false">
+        <input type="file"
+               id="fileInput"
+               class="input-file"
+               (change)="uploadImage($event);"
+               accept="image/*"
+               formControlName="coverImageUrl">
+        <img
+          class="banner-cover-image"
+          (click)="triggerInput()"
+          [src]="coverImageUrl || banner.coverImageUrl"
+          alt="Cover image for banner">
+        <span *ngIf="hover" class="banner-cover-image-text" (click)="triggerInput()">Прикачи снимка</span>
+      </div>
+      <div class="form-body">
+        <div class="form-body-options">
+          <div class="banner-category">
+            <select formControlName="category">
+              <option value="">{{banner.category}}</option>
+              <option *ngFor="let category of categories" [value]="category">
+                {{ category }}
+              </option>
+            </select>
+          </div>
+        </div>
+        <div class="form-body-heading">
+          <input class="banner-title" type="text" placeholder="Заглавие" formControlName="title" />
+          <div class="alert" *ngIf="title?.touched && title?.errors?.['required']">* задължително</div>
+          <div class="alert" *ngIf="title?.touched && title?.errors?.['maxlength']">* максимален брой символи 50</div>
+        </div>
+        <div class="form-body-content">
+          <textarea class="banner-description" rows="6" placeholder="Въведи описание на твоя пост"  formControlName="description"></textarea>
+          <div class="alert" *ngIf="description?.touched && description?.errors?.['required']">* задължително</div>
+            <div class="alert" *ngIf="description?.touched && description?.errors?.['maxlength']">* максимален брой символи 300</div>
+        </div>
+        <div class="form-body-level">
+          <p class="form-body-level-heading">Избери твоята подходяща аудитория</p>
+          <div class="level-checkbox">
+            <div class="level-checkbox-box">
+              <input type="radio" value="option1" name="selectionGroup" formControlName="level">
+              <label>Всеки, който се интересува, без значение от опита</label>
+            </div>
+            <div class="level-checkbox-box">
+              <input type="radio" value="option2" name="selectionGroup" formControlName="level">
+              <label>Имат малки познания в областта</label>
+            </div>
+            <div class="level-checkbox-box">
+              <input type="radio" value="option3" name="selectionGroup" formControlName="level">
+              <label>За професионалисти и непреднали</label>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="form-submit-button">
+        <button class="button-primary" (click)="editBanner()">Запази</button>
+      </div>
+    </form>
+  </div>
+</div>

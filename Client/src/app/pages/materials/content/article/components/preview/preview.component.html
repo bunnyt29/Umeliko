@@ -1,0 +1,11 @@
+<div class="details">
+  <div class="content-details">
+    <hero [material]="material"></hero>
+    <div class="description" [innerHTML]="material.article.content"></div>
+    <div class="elements">
+      <all-resources [resources]="material.article.resources"></all-resources>
+      <all-keywords [material]="material"></all-keywords>
+    </div>
+  </div>
+</div>
+<created-for></created-for>

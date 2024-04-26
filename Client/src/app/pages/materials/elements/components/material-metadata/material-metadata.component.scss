@@ -1,0 +1,31 @@
+@use '../../../../../../assets/style/variables';
+@use '../../../../../../assets/style/typography';
+
+.material-additional-information {
+  margin-bottom: 20px;
+  display: flex;
+  gap: 20px;
+
+  .information {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+  }
+
+  .creator {
+    cursor: pointer;
+
+    img {
+      width: 40px;
+      height: 40px;
+      object-fit: cover;
+      border-radius: 50%;
+    }
+  }
+
+  .category {
+    p{
+      font-weight: typography.$medium;
+    }
+  }
+}

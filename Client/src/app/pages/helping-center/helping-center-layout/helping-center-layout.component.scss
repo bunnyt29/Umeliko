@@ -1,0 +1,62 @@
+@use '../../../../assets/style/variables';
+@use '../../../../assets/style/typography';
+@use '../../../../assets/style/breakpoints';
+
+.helping-center-layout {
+    margin-block: 40px;
+    padding-inline: variables.$wrapper;
+
+    h1 {
+        font-size: typography.$font-size-4xl;
+    }
+
+    &-components {
+        margin-top: 50px;
+        display: grid;
+        grid-template-columns: 1fr 4fr;
+        gap: 80px;
+
+        .sidebar {
+            display: flex;
+            flex-direction: column;
+            gap: 25px;
+    
+            .link {
+                display: flex;    
+                align-items: center;
+                gap: 15px;
+    
+                a {
+                    font-size: typography.$font-size-lg;
+                }
+
+                .active-link {
+                    color: variables.$tertiary-color;
+                }
+            }
+    
+            .return {
+                padding-top: 20px;
+                margin-bottom: 30px;
+                border-top: 2px solid variables.$primary-color;
+            }
+        }
+    }
+}
+
+@include breakpoints.media-query(xs, lg) {
+
+    .helping-center-layout {
+        margin-top: 40px;
+        padding-inline: variables.$wrapper-for-mobile;
+    
+        h1 {
+            font-size: typography.$font-size-2xl;
+        }
+    
+        &-components {
+            grid-template-columns: 1fr;
+            gap: 40px;
+        }
+    }
+}

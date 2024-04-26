@@ -1,0 +1,87 @@
+<h2>Материали</h2>
+<div class="all-materials">
+    <div *ngFor="let material of materials">
+        <div class="banner"
+             (mouseenter)="hover = material.id"
+             (mouseleave)="hover = null">
+            <div class="banner-image">
+                <img class="banner-cover-image" [src]="material.banner.coverImageUrl" alt="Заглавна снимка на банер">
+            </div>
+            <div class="banner-body">
+              <div>
+                <div class="banner-interactions">
+                  <p *ngIf="material.stateType == 1"
+                     [ngStyle]="{'color': getStateColor(material.stateType)}">
+                    <svg xmlns="http://www.w3.org/2000/svg" height="12" width="12" viewBox="0 0 512 512"><!--!Font Awesome Free 6.5.1 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free Copyright 2024 Fonticons, Inc.--><path fill="#999da3" d="M469.3 19.3l23.4 23.4c25 25 25 65.5 0 90.5l-56.4 56.4L322.3 75.7l56.4-56.4c25-25 65.5-25 90.5 0zM44.9 353.2L299.7 98.3 413.7 212.3 158.8 467.1c-6.7 6.7-15.1 11.6-24.2 14.2l-104 29.7c-8.4 2.4-17.4 .1-23.6-6.1s-8.5-15.2-6.1-23.6l29.7-104c2.6-9.2 7.5-17.5 14.2-24.2zM249.4 103.4L103.4 249.4 16 161.9c-18.7-18.7-18.7-49.1 0-67.9L94.1 16c18.7-18.7 49.1-18.7 67.9 0l19.8 19.8c-.3 .3-.7 .6-1 .9l-64 64c-6.2 6.2-6.2 16.4 0 22.6s16.4 6.2 22.6 0l64-64c.3-.3 .6-.7 .9-1l45.1 45.1zM408.6 262.6l45.1 45.1c-.3 .3-.7 .6-1 .9l-64 64c-6.2 6.2-6.2 16.4 0 22.6s16.4 6.2 22.6 0l64-64c.3-.3 .6-.7 .9-1L496 350.1c18.7 18.7 18.7 49.1 0 67.9L417.9 496c-18.7 18.7-49.1 18.7-67.9 0l-87.4-87.4L408.6 262.6z"/></svg>
+                    {{ material.stateType | stateTypeToString }}
+                  </p>
+                  <p *ngIf="material.stateType == 2"
+                     [ngStyle]="{'color': getStateColor(material.stateType)}">
+                    <svg xmlns="http://www.w3.org/2000/svg" height="12" width="9" viewBox="0 0 384 512"><!--!Font Awesome Free 6.5.1 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free Copyright 2024 Fonticons, Inc.--><path fill="#ffcc70" d="M32 0C14.3 0 0 14.3 0 32S14.3 64 32 64V75c0 42.4 16.9 83.1 46.9 113.1L146.7 256 78.9 323.9C48.9 353.9 32 394.6 32 437v11c-17.7 0-32 14.3-32 32s14.3 32 32 32H64 320h32c17.7 0 32-14.3 32-32s-14.3-32-32-32V437c0-42.4-16.9-83.1-46.9-113.1L237.3 256l67.9-67.9c30-30 46.9-70.7 46.9-113.1V64c17.7 0 32-14.3 32-32s-14.3-32-32-32H320 64 32zM96 75V64H288V75c0 19-5.6 37.4-16 53H112c-10.3-15.6-16-34-16-53zm16 309c3.5-5.3 7.6-10.3 12.1-14.9L192 301.3l67.9 67.9c4.6 4.6 8.6 9.6 12.1 14.9H112z"/></svg>
+                    {{ material.stateType | stateTypeToString}}
+                  </p>
+                  <p *ngIf="material.stateType == 3"
+                     [ngStyle]="{'color': getStateColor(material.stateType)}">
+                    <svg xmlns="http://www.w3.org/2000/svg" height="12" width="9" viewBox="0 0 384 512"><!--!Font Awesome Free 6.5.1 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free Copyright 2024 Fonticons, Inc.--><path fill="#eb455f" d="M376.6 84.5c11.3-13.6 9.5-33.8-4.1-45.1s-33.8-9.5-45.1 4.1L192 206 56.6 43.5C45.3 29.9 25.1 28.1 11.5 39.4S-3.9 70.9 7.4 84.5L150.3 256 7.4 427.5c-11.3 13.6-9.5 33.8 4.1 45.1s33.8 9.5 45.1-4.1L192 306 327.4 468.5c11.3 13.6 31.5 15.4 45.1 4.1s15.4-31.5 4.1-45.1L233.7 256 376.6 84.5z"/></svg>
+                    {{ material.stateType | stateTypeToString }}
+                  </p>
+                  <p *ngIf="material.stateType == 4"
+                     [ngStyle]="{'color': getStateColor(material.stateType)}">
+                    <svg xmlns="http://www.w3.org/2000/svg" height="12" width="10.5" viewBox="0 0 448 512"><!--!Font Awesome Free 6.5.1 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free Copyright 2024 Fonticons, Inc.--><path fill="#a7d397" d="M438.6 105.4c12.5 12.5 12.5 32.8 0 45.3l-256 256c-12.5 12.5-32.8 12.5-45.3 0l-128-128c-12.5-12.5-12.5-32.8 0-45.3s32.8-12.5 45.3 0L160 338.7 393.4 105.4c12.5-12.5 32.8-12.5 45.3 0z"/></svg>
+                    {{ material.stateType | stateTypeToString }}
+                  </p>
+                </div>
+                <div class="banner-heading">
+                  <div class="banner-options">
+                    <p class="banner-type">{{ material.contentType | contentTypeToString }}</p>
+                    <p class="banner-category">{{ material.banner.category }}</p>
+                  </div>
+                  <h3 class="banner-title">{{ material.banner.title }}</h3>
+                </div>
+              </div>
+              <div class="helper">
+                <div class="banner-content">
+                  <p class="banner-description">{{ material.banner.description}}</p>
+                </div>
+                <div class="banner-functions">
+                  <button class="button-secondary"
+                          type="submit"
+                          (click)="showPublicDialog(material.id)"
+                          [disabled]="material.stateType == 2">Публикувай</button>
+                  <button (click)="edit(material.contentType, material.id)"
+                          [disabled]="material.stateType == 2">
+                    <img src="../../../../../../assets/images/edit.png" alt="edit">
+                  </button>
+                  <button (click)="delete(material.id)"
+                          [disabled]="material.stateType == 2">
+                    <img src="../../../../../../assets/images/delete.png" alt="delete">
+                  </button>
+                  <custom-confirm-dialog (confirm)="handleConfirmation($event)"></custom-confirm-dialog>
+                </div>
+              </div>
+            </div>
+            <span *ngIf="hover == material.id"
+                  (click)="preview(material.contentType, material.id)"
+                  class="banner-open">Разгледай</span>
+            <div *ngIf="showConfirmDialog" class="confirm-to-public-material-holder">
+              <div class="confirm-to-public-material">
+                <p>
+                  Уверен си в своя материал и нямаш търпение да го споделиш? Това е страхотно! <br/>
+                  За Умелико е от истинско значение предлагането на качествено съдържание, което не включва чуствителна информация, <br/>
+                  за тази цел всеки материал преди да стане публично достъпен трябва да премине през одобрение за публикация. <br/>
+                  Продължи напред, ако си готов, а ние ще се погрижим за останалото. <br/>
+                  * Важно е да отбележим, че в периода на изчакване за одобрение, не се допускат редакции на материал.
+                </p>
+                <div class="confirm-to-public-material-buttons">
+                  <button class="button-primary" (click)="publish(materialToPublishId)">Приеми</button>
+                  <button class="button-secondary" (click)="closePublicDialog()">Откажи</button>
+                </div>
+              </div>
+            </div>
+        </div>
+    </div>
+</div>
+<div *ngIf="materials.length == 0" class="no-materials" >
+  <img src="../../../../../../assets/images/no-materials.svg" alt="Няма създадени материали">
+  <h3>За съжаление нямаш създадени материали все още...</h3>
+</div>

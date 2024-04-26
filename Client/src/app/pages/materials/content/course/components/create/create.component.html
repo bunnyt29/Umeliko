@@ -1,0 +1,34 @@
+<material-title></material-title>
+<form class="content-holder"
+      [formGroup]="courseForm"
+      (ngSubmit)="create()">
+  <div class="content">
+    <h3>Допълнително описание</h3>
+    <app-editor formControlName="content"></app-editor>
+  </div>
+    <div class="section-holder">
+        <div *ngFor="let section of sections; let i = index">
+            <div class="section">
+              <div class="section-title">
+                <p>Раздел:</p>
+                <input [formControl]="section.titleControl" (input)="updateTitle(i, $event)" placeholder="Заглавие">
+              </div>
+              <div class="section-content">
+                <div class="section-content-lesson">
+                  <input type="text" placeholder="{{lessonsCount}}. Заглавие на урока">
+                  <button class="create-lesson" (click)="routeToLesson()">+ Съдържание</button>
+                </div>
+                <button class="add-lesson" (click)="createLesson(section); $event.preventDefault()">+ Нов урок</button>
+                <div class="save-panel">
+                  <button class="save">Запази</button>
+                </div>
+              </div>
+            </div>
+        </div>
+        <button type="button" (click)="addSection()">+Нов раздел</button>
+    </div>
+    <create-resources></create-resources>
+    <div class="content-save-button">
+      <button class="button-primary" type="submit">Запази</button>
+    </div>
+</form>

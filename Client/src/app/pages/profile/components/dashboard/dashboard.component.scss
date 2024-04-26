@@ -1,0 +1,50 @@
+@use '../../../../../assets/style/typography';
+@use '../../../../../assets/style/variables';
+@use '../../../../../assets/style/breakpoints';
+
+.dashboard {
+  margin-top: 80px;
+  padding-inline: 160px;
+
+  h1 {
+    margin-bottom: 80px;
+    font-size: typography.$font-size-5xl;
+    font-weight: 400;
+    color: variables.$primary-color;
+  }
+
+  .materials-holder {
+    margin-top: 200px;
+  }
+}
+
+@include breakpoints.media-query(xs, sm) {
+  .dashboard {
+    padding-inline: 40px;
+  }
+}
+
+@include breakpoints.media-query(sm, md) {
+  .dashboard {
+    padding-inline: 100px;
+  }
+}
+
+@include breakpoints.media-query(md, lg) {
+  .dashboard {
+    padding-inline: 50px;
+  }
+}
+
+@include breakpoints.media-query(lg, xl) {
+  .dashboard {
+    padding-inline: 50px;
+  }
+}
+
+@include breakpoints.media-query(xl, xxl) {
+  .dashboard {
+    padding-inline: 50px;
+  }
+}
+

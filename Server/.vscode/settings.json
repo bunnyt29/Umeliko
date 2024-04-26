@@ -1,0 +1,4 @@
+{
+    "appService.defaultWebAppToDeploy": "/subscriptions/ca455905-d56f-49ea-ba96-4e5e54efeaff/resourceGroups/Umeliko/providers/Microsoft.Web/sites/umeliko",
+    "appService.deploySubpath": "."
+}

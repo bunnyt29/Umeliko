@@ -1,0 +1,88 @@
+@use '../../../../../../../assets/style/variables';
+@use '../../../../../../../assets/style/typography';
+
+// .material-additional-information {
+//     margin-bottom: 20px;
+//     display: flex;
+//     gap: 20px;
+  
+//     .information {
+//       display: flex;
+//       align-items: center;
+//       gap: 10px;
+//     }
+  
+//     .creator {
+//       img {
+//         width: 40px;
+//         height: 40px;
+//         object-fit: cover;
+//         border-radius: 50%;
+//       }
+//     }
+  
+//     .category {
+//       p{
+//         font-weight: typography.$medium;
+//       }
+//     }
+//   }
+
+.comments-holder {
+    h3 {
+        font-size: 30px;
+    }
+  
+    .comments {
+        margin-block: 50px;
+        display: flex;
+        flex-direction: column;
+        gap: 40px;
+  
+        &-comment {
+            width: 70%;
+            display: grid;
+            grid-template-columns: 1fr 8fr 1fr;
+            gap: 10px;
+  
+            &-commenter-profile-picture {
+                width: 50px;
+                height: 50px;
+                border-radius: 50px;
+            }
+  
+            &-content {
+                
+                &-commenter {
+                  font-weight: typography.$bold;
+                }
+            }
+  
+            .delete-option {
+              .delete {
+                cursor: pointer;
+              }
+            }
+        }
+    }
+  
+    .comment-area {
+        width: 70%;
+        display: flex;
+        flex-direction: column;
+        padding: 20px 40px;
+        border: 1px solid variables.$primary-color;
+        border-radius: 30px;
+  
+        textarea {
+            width: 100%;
+            overflow: hidden;
+            resize: none;
+        }
+  
+        button svg{
+            float: right;
+        }
+    }
+  }
+  

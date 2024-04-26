@@ -1,0 +1,23 @@
+@use "../../../../../../../../assets/style/variables";
+
+.keywords-holder {
+  padding: 40px 0;
+
+  h3 {
+    font-size: 30px;
+  }
+
+  .keywords {
+    margin-top: 30px;
+    display: flex;
+    gap: 5px;
+
+    .keyword {
+      padding: 5px 30px;
+      background-color: variables.$primary-color;
+      color: white;
+      border-radius: 30px;
+      text-align: center;
+    }
+  }
+}

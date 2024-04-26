@@ -1,0 +1,38 @@
+.interaction-toolbar {
+  display: flex;
+  justify-content: space-between;
+
+  .like-dislike-comment {
+    display: flex;
+    gap: 20px;
+
+    button {
+      width: auto;
+      background-color: transparent;
+      padding: 0;
+      padding-right: 10px;
+    }
+
+    p {
+      font-size: 20px;
+    }
+
+    .interaction {
+      display: flex;
+      align-items: center;
+
+      .interact svg {
+        transition: fill 0.3s ease;
+        cursor: pointer;
+      }
+      
+      .interact:hover svg {
+        stroke: #555;  // Darken the arrow on hover
+      }
+      
+      .interact.active svg {
+        fill: yellow;  // Fill the arrow on active state
+      }
+    }
+  }
+}

@@ -1,0 +1,31 @@
+<material-title></material-title>
+<form class="content-holder" [formGroup]="lessonForm">
+  <div class="upload-video">
+    <input
+    type="file"
+    id="fileInput"
+    class="file-input"
+    (change)="addVideo($event);"
+    formControlName="fileUrl"
+    accept="video/*">
+    <svg xmlns="http://www.w3.org/2000/svg" height="60" width="56" viewBox="0 0 384 512"><!--!Font Awesome Free 6.5.1 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free Copyright 2023 Fonticons, Inc.--><path fill="#ffcc70" d="M64 0C28.7 0 0 28.7 0 64V448c0 35.3 28.7 64 64 64H320c35.3 0 64-28.7 64-64V160H256c-17.7 0-32-14.3-32-32V0H64zM256 0V128H384L256 0zM216 408c0 13.3-10.7 24-24 24s-24-10.7-24-24V305.9l-31 31c-9.4 9.4-24.6 9.4-33.9 0s-9.4-24.6 0-33.9l72-72c9.4-9.4 24.6-9.4 33.9 0l72 72c9.4 9.4 9.4 24.6 0 33.9s-24.6 9.4-33.9 0l-31-31V408z"/></svg>
+    <p>Прикачи своя видео урок</p>
+    <progress value="{{ progress }}" max="99"></progress>
+    <span *ngIf="!showProcessingMessage">{{ progress }}%</span>
+    <div *ngIf="showProcessingMessage">Видеото е в процес на обработка...</div>
+    <div *ngIf="videoUrl && !showProcessingMessage">
+      <video [src]="videoUrl" controls></video>
+    </div>
+  </div>
+  <div class="content">
+    <h3>Допълнително описание</h3>
+    <app-editor formControlName="content" [htmlContent]="lesson.content"></app-editor>
+  </div>
+  <create-resources></create-resources>
+  <edit-resources [uploadedResources]="uploadedResources"></edit-resources>
+  <div class="content-save-button">
+    <button class="button-primary" (click)="editLesson()">Запази</button>
+  </div>
+</form>
+
+

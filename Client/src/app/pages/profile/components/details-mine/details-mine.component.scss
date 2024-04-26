@@ -1,0 +1,110 @@
+@use '../../../../../assets/style/variables';
+@use '../../../../../assets/style/typography';
+@use '../../../../../assets/style/breakpoints';
+
+.profile-information-holder {
+  margin-top: 20px;
+  padding-inline: 200px;
+
+  h1 {
+    font-size: typography.$font-size-3xl;
+    font-family: typography.$secondary-font-family;
+    font-weight: typography.$medium;
+    color: variables.$primary-color;
+  }
+
+  .profile-main-information {
+    margin-block: 50px;
+    flex-direction: column;
+
+    .profile-following-activity {
+      display: flex;
+      gap: 10px;
+
+      .following-box {
+        position: relative;
+        padding: 5px 10px;
+        display: flex;
+        gap: 5px;
+        background-color: variables.$tertiary-color;
+        border-radius: 10px;
+        cursor: pointer;
+
+        .number {
+          font-weight: typography.$medium;
+          font-size: 20px;
+        }
+      }
+    }
+
+    .profile-name-and-username {
+      display: flex;
+      align-items: flex-end;
+      gap: 10px;
+
+      .profile-name {
+        font-size: typography.$font-size-xl;
+      }
+
+      .profile-username {
+        background-color: variables.$tertiary-color;
+        padding: 5px 10px;
+        border-radius: 5px;
+      }
+
+    }
+
+    .profile-description {
+      width: 50%;
+      text-align: justify;
+    }
+  }
+}
+
+@include breakpoints.media-query(xs, sm) {
+  .profile-information-holder {
+    padding-inline: variables.$wrapper-for-mobile;
+
+    h1 {
+      font-size: typography.$font-size-3xl-m;
+    }
+
+    .profile-main-information {
+      .profile-description {
+        width: 100%;
+      }
+    }
+  }
+}
+
+@include breakpoints.media-query(sm, md) {
+  .profile-information-holder {
+    padding-inline: variables.$wrapper-for-mobile;
+
+    h1 {
+      font-size: typography.$font-size-3xl-m;
+    }
+  }
+}
+
+@include breakpoints.media-query(md, lg){
+  .profile-information-holder {
+    padding-inline: variables.$wrapper-for-mobile;
+
+    h1 {
+      font-size: typography.$font-size-3xl-m;
+    }
+  }
+}
+
+@include breakpoints.media-query(lg, xl) {
+  .profile-information-holder {
+    padding-inline: 80px;
+  }
+}
+
+@include breakpoints.media-query(xl, xxl) {
+  .profile-information-holder {
+    padding-inline: 100px;
+  }
+}

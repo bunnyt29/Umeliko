@@ -1,0 +1,47 @@
+@use '../../../../../../../../assets/style/variables';
+
+.keywords-holder {
+  position: relative;
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+  flex-direction: row-reverse;
+
+  .add-keyword {
+    margin-left: 2px;
+    padding: 0;
+    width: auto;
+    background-color: transparent;
+    font-size: 30px;
+    cursor: pointer;
+  }
+
+  .keywords {
+    display: flex;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 5px;
+
+    .keyword-holder {
+      position: relative;
+
+      .keyword {
+        width: 100px;
+        padding: 2px 5px;
+        background-color: variables.$primary-color;
+        color: white;
+        border-radius: 30px;
+        text-align: center;
+      }
+
+      .delete-keyword {
+        position: absolute;
+        font-size: 30px;
+        top: -20px;
+        right: 2px;
+        color: variables.$tertiary-color;
+        z-index: 1000;
+      }
+    }
+  }
+}

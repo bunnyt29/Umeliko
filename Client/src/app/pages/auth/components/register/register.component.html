@@ -1,0 +1,55 @@
+<auth-layout>
+  <div class="form-holder">
+    <h3>Създай своя профил</h3>
+    <form [formGroup]="registerForm"
+          (ngSubmit)="register()">
+      <div class="names-holder">
+        <div class="form-group">
+          <label>Име</label>
+          <input type="text" placeholder="Иван" formControlName="firstName">
+          <div *ngIf="firstName?.touched && firstName?.errors?.['required']" class="alert">* задължително</div>
+          <div *ngIf=" firstName?.touched && firstName?.errors?.['minlength'] || firstName?.errors?.['maxlength']" class="alert">* най-малко 2 символа и най-много 20</div>
+        </div>
+        <div class="form-group">
+          <label>Фамилия</label>
+          <input type="text" placeholder="Иванов" formControlName="lastName">
+          <div *ngIf="lastName?.touched && lastName?.errors?.['required']" class="alert">* задължително</div>
+          <div *ngIf="lastName?.touched && lastName?.errors?.['minlength'] || lastName?.errors?.['maxlength']" class="alert">* най-малко 2 символа и най-много 20</div>
+        </div>
+      </div>
+      <div class="form-group">
+        <label>Потребителско име</label>
+        <input type="text" placeholder="ivanivanov" formControlName="userName">
+        <div *ngIf="userName?.touched && userName?.errors?.['required']" class="alert">* задължително</div>
+        <div *ngIf="userName?.touched && userName?.errors?.['minlength']" class="alert">* най-малко 2 символа</div>
+      </div>
+      <div class="form-group">
+        <label>Имейл</label>
+        <input type="email" placeholder="ivanivanov@gmail.com" formControlName="email">
+        <div *ngIf="email?.touched && email?.errors?.['required']" class="alert">* задължително</div>
+        <div *ngIf="email?.touched && email?.errors?.['email']" class="alert">* въведи валиден имейл</div>
+        <div *ngIf="email?.touched && email?.errors?.['minLength'] || email?.touched && email?.errors?.['maxLength']" class="alert">* най-малко 3 символа и най-много 50</div>
+      </div>
+      <div class="form-group">
+        <label>Парола</label>
+        <input type="password" formControlName="password">
+        <div *ngIf="password?.touched && password?.errors?.['required']" class="alert">* задължително</div>
+        <div *ngIf="password?.touched && password?.errors?.['minlength']" class="alert">* най-малко 8 символа</div>
+      </div>
+      <div class="form-group">
+        <label>Потвърди парола</label>
+        <input type="password" formControlName="confirmPassword">
+        <div *ngIf="registerForm.get('confirmPassword')?.errors?.['mustMatch']" class="alert">
+          Паролите не съвпадат
+        </div>
+      </div>
+      <button class="button-primary" type="submit">Регистрирай се</button>
+      <div>
+        <p routerLink="/auth/login" class="link">Вече имаш профил? Влез.</p>
+      </div>
+    </form>
+  </div>
+  <div class="image-holder">
+    <img src="../../../../../assets/images/register-image.svg" alt="Снимка за регистрация">
+  </div>
+</auth-layout>

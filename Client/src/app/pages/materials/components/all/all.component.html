@@ -1,0 +1,69 @@
+<navigation-menu [ngStyle]="navigationMenuStyles"
+                 [canRenderSearchBar]="true">
+</navigation-menu>
+<div class="container">
+  <div class="categories-sidebar">
+      <h5>Категории</h5>
+      <ul>
+        <li *ngFor="let category of categories">
+          <span (click)="fetchMaterials(category)">{{ category }}</span>
+        </li>
+      </ul>
+  </div>
+  <div class="banners">
+    <div class="banner-for-all-banners-page" *ngFor="let material of materials">
+      <div class="banner">
+        <div class="banner-image">
+          <img class="banner-cover-image" [src]="material.banner.coverImageUrl" alt="Заглавна снимка">
+        </div>
+        <div class="banner-body">
+          <div>
+            <div class="banner-interactions">
+              <div class="banner-creator" (click)="viewCreatorProfile(material.creator.id)">
+                <img
+                  [src]="material.creator.imageUrl"
+                  alt="Профилна снимка"
+                  class="banner-creator-profile-image">
+                <p>{{ material.creator.firstName }} {{ material.creator.lastName }}</p>
+              </div>
+            </div>
+            <div class="banner-heading">
+              <div class="banner-options">
+                <p class="banner-type">{{ contentType }}</p>
+                <p class="banner-category">{{ material.banner.category }}</p>
+              </div>
+              <h3 class="banner-title">{{ material.banner.title }}</h3>
+            </div>
+          </div>
+          <div class="helper">
+            <div class="banner-content">
+              <p class="banner-description">{{ material.banner.description}}</p>
+            </div>
+            <div class="banner-functions">
+              <button class="button-primary" type="submit" (click)="getDetails(material.contentType, material.id)">Разгледай</button>
+              <p class="banner-level">{{ material.banner.level }}</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="creators-board">
+    <h5>Открий съмшленици</h5>
+    <div class="creators">
+      <div *ngFor="let creator of creators">
+        <div class="creator">
+          <div class="creator-info" (click)="viewCreatorProfile(creator.id)">
+            <img
+              class="creator-info-profile-image"
+              [src]="creator.imageUrl"
+              alt="Профилна снимка">
+            <div class="creator-info-username">
+              <p>{{ creator.userName }}</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

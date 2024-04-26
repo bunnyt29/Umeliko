@@ -1,0 +1,10 @@
+<div class="material-additional-information">
+    <div class="information creator" (click)="viewCreatorProfile(material.creator.id)">
+      <img class="creator-profile-image" [src]="material.creator.imageUrl" alt="Профилна снимка">
+      <p>{{ material.creator.firstName }} {{ material.creator.lastName }}</p>
+    </div>
+    <div class="information category">
+      <img src="../../../../../../assets/images/category.png" alt="Категория">
+      <p>{{ material.banner.category }}</p>
+    </div>
+</div>

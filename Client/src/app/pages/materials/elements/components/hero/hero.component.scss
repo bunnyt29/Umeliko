@@ -1,0 +1,26 @@
+@use '../../../../../../assets/style/variables';
+
+.hero {
+  .material {
+    display: flex;
+    flex-direction: column;
+
+    &-image-holder {
+      img {
+        width: 100%;
+      }
+    }
+
+    &-text-holder {
+      text-align: justify;
+
+      .type {
+        color: variables.$tertiary-color;
+      }
+
+      h1 {
+        color: variables.$primary-color;
+      }
+    }
+  }
+}

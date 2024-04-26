@@ -1,0 +1,35 @@
+@use '../../../../assets/style/variables';
+@use '../../../../assets/style/typography';
+
+.page-access-denied-holder {
+  height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: linear-gradient(variables.$primary-color, variables.$tertiary-color);
+
+  .page-access-denied {
+    width: 50%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+    &-image {
+      width: 50%;
+    }
+
+    &-text {
+      margin-bottom: 20px;
+      font-size: typography.$font-size-3xl;
+      line-height: typography.$line-height-lg;
+      text-align: center;
+    }
+
+    .navigate-to-home {
+      display: flex;
+      align-items: center;
+      gap: 5px;
+      cursor: pointer;
+    }
+  }
+}

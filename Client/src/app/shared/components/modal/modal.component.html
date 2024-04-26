@@ -1,0 +1,12 @@
+<div class="modal-background" *ngIf="show">
+  <div class="modal">
+    <h2>{{ title }}</h2>
+    <div *ngFor="let creator of creators">
+      <div class="follower">
+        <img [src]="creator.imageUrl" alt="Снимка на профила">
+        <p (click)="viewCreatorProfile(creator.id)">{{ creator.userName }}</p>
+      </div>
+    </div>
+    <button (click)="close()">Затвори</button>
+  </div>
+</div>

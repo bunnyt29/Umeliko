@@ -1,0 +1,162 @@
+@use '../../../../../assets/style/typography';
+@use '../../../../../assets/style/variables';
+@use '../../../../../assets/style/breakpoints';
+
+.profile-edit-holder {
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+
+  h1 {
+    margin-block: 20px 100px;
+    font-size: typography.$font-size-2xl;
+    font-weight: typography.$medium;
+    text-align: center;
+    color: variables.$primary-color;
+  }
+
+  .main-profile-information {
+    display: grid;
+    place-items: center;
+    gap: 80px;
+
+    .profile-information-holder {
+      display: flex;
+      flex-direction: column;
+      gap: 80px;
+
+      .profile-main-information {
+        padding: 30px 60px;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        background-color: variables.$tertiary-color;
+        border-radius: 30px;
+
+        .profile-image-URL-name-and-username {
+          display: flex;
+          align-items: center;
+          gap: 30px;
+
+          .profile-input-image{
+            display: none;
+          }
+
+          .profile-name-and-username {
+            display: flex;
+            flex-direction: column;
+            gap: 10px;
+
+            label {
+              font-size: typography.$font-size-md;
+              font-weight: typography.$semi-bold;
+            }
+
+            .profile-name {
+              width: fit-content;
+              color: variables.$primary-color;
+            }
+
+            .profile-username {
+              font-size: typography.$font-size-lg;
+            }
+          }
+        }
+
+      }
+
+      .profile-description {
+        display: flex;
+        flex-direction: column;
+
+        textarea {
+          margin-top: 20px;
+          padding: 20px;
+          font-size: typography.$font-size-md;
+          border: 1px solid variables.$primary-color;
+          border-radius: 10px;
+        }
+      }
+
+      .profile-change-options {
+        display: flex;
+        flex-direction: column;
+      }
+    }
+  }
+}
+
+@include breakpoints.media-query(xs, sm) {
+  .profile-edit-holder {
+
+    .main-profile-information {
+
+      .profile-information-holder {
+        width: 80%;
+        gap: 30px;
+
+        .profile-main-information {
+          padding: 20px 20px;
+          flex-direction: column;
+          align-items: flex-start;
+        }
+      }
+    }
+  }
+}
+
+@include breakpoints.media-query(sm, md) {
+  .profile-edit-holder {
+    width: 100%;
+
+    .main-profile-information {
+
+      .profile-information-holder {
+        gap: 30px;
+
+        .profile-main-information {
+          padding: 20px 20px;
+          flex-direction: column;
+          align-items: flex-start;
+        }
+      }
+    }
+  }
+}
+
+@include breakpoints.media-query(md, lg) {
+  .profile-edit-holder {
+    width: 100%;
+
+    .main-profile-information {
+
+      .profile-information-holder {
+        gap: 30px;
+
+        .profile-main-information {
+          padding: 20px 20px;
+        }
+      }
+    }
+  }
+}
+
+@include breakpoints.media-query(lg, xl) {
+  .profile-edit-holder {
+    width: 100%;
+
+    .main-profile-information {
+
+      .profile-information-holder {
+        gap: 30px;
+
+        .profile-main-information {
+          padding: 20px 20px;
+        }
+      }
+    }
+  }
+}
+
+

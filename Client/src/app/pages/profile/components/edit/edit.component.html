@@ -1,0 +1,38 @@
+ <navigation-menu></navigation-menu>
+<div class="profile-edit-holder">
+  <h1>Редакция</h1>
+  <form [formGroup]="profileForm" class="main-profile-information">
+    <div class="profile-information-holder">
+      <div class="profile-main-information">
+        <div class="profile-image-URL-name-and-username">
+          <input class="profile-input-image" type="file" id="fileInput" (change)="uploadImage($event);" accept="image/*">
+          <img class="profile-image" [src]="imageUrl || creator.imageUrl" alt="Снимка на профила" />
+          <div class="profile-name-and-username">
+            <input class="profile-username" type="text" placeholder="Избери своя username" formControlName="userName">
+            <label>Име: <input class="profile-name" type="text" formControlName="firstName"></label>
+            <div class="alert" *ngIf="firstName?.touched && firstName?.errors?.['required']">* задължително</div>
+            <div class="alert" *ngIf="firstName?.touched && firstName?.errors?.['minlength']">* минимален брой символи 2</div>
+            <label>Фамилия: <input class="profile-name" type="text" formControlName="lastName"></label>
+            <div class="alert" *ngIf="lastName?.touched && lastName?.errors?.['required']">* задължително</div>
+            <div class="alert" *ngIf="lastName?.touched && lastName?.errors?.['minlength']">* минимален брой символи 2</div>
+          </div>
+        </div>
+        <button class="button-secondary"
+                (click)="triggerInput()"
+                [ngStyle]="{'text-transform': 'none', 'border-radius': '10px'}">Промени профилната снимка</button>
+      </div>
+      <div class="profile-description">
+        <label>Био</label>
+        <textarea formControlName="bio" placeholder="Добави своето био"></textarea>
+      </div>
+      <div class="profile-change-options">
+        <button routerLink="/auth/change-password">Промени паролата си</button>
+        <button routerLink="/auth/change-email">Промени имейла си</button>
+      </div>
+    </div>
+    <button class="button-primary" (click)="editProfile()">Запази</button>
+  </form>
+</div>
+
+
+

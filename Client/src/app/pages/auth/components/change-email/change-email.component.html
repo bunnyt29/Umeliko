@@ -1,0 +1,17 @@
+<auth-layout>
+  <div class="form-holder">
+    <h3>Промени имейла си</h3>
+    <form [formGroup]="changeEmailForm"
+          (submit)="changeEmail()">
+      <div class="form-group">
+        <label>Въведете новия си имейл</label>
+        <input type="email" formControlName="email">
+        <div *ngIf="email?.touched && email?.errors?.['required']" class="alert">* задължително</div>
+      </div>
+      <button class="button-primary" type="submit">Промени имейла</button>
+    </form>
+  </div>
+  <div class="image-holder">
+    <img src="../../../../../assets/images/change-email.svg" alt="Забравена имейл">
+  </div>
+</auth-layout>

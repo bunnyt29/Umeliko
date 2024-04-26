@@ -1,0 +1,95 @@
+@use '../../../../../assets/style/variables';
+@use '../../../../../assets/style/typography';
+@use '../../../../../assets/style/breakpoints';
+
+.hero {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  padding-inline: 140px;
+  width: 50%;
+  height: 70%;
+  display: grid;
+  grid-template-columns: 60% 40%;
+  place-items: center;
+  background-color: variables.$secondary-color;
+  border-radius: 30px;
+
+  &-title {
+    h1 {
+      color: white;
+    }
+
+    p {
+      margin-top: 20px;
+      width: 18ch;
+      font-family: typography.$secondary-font-family;
+      font-size: typography.$font-size-3xl;
+      line-height: typography.$line-height-lg;
+      color: variables.$tertiary-color;
+    }
+  }
+
+  &-image {
+    position: relative;
+    z-index: 10;
+
+    img {
+      position: absolute;
+      top: -5%;
+      left: -5%;
+      transform: scale(1.02) translate(-50%, -50%);
+    }
+  }
+}
+
+@include breakpoints.media-query(xs, lg) {
+
+  .hero {
+    padding: 20px;
+    width: 80%;
+    display: flex;
+    flex-direction: column-reverse;
+    justify-content: center;
+    background-color: transparent;
+
+    &-title {
+      margin-top: -130px;
+      padding: 20px 20px;
+      background-color: variables.$primary-color;
+      border: 1px solid variables.$tertiary-color;
+      border-radius: 30px;
+      z-index: 2;
+
+      p {
+        font-size: typography.$font-size-3xl-m;
+      }
+    }
+
+    &-image {
+      position: unset;
+      display: flex;
+      align-items: center;
+      z-index: 1;
+
+      img {
+        width: 80%;
+        transform: none;
+        position: unset;
+      }
+    }
+  }
+}
+
+@include breakpoints.media-query(lg, xxxl) {
+  .hero {
+
+    &-image {
+
+      img {
+        transform: scale(0.80) translate(-40%, -60%);
+      }
+    }
+  }
+}

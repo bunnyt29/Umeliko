@@ -1,0 +1,40 @@
+@use '../../../../../../../../assets/style/variables';
+
+h4 {
+  margin-bottom: 50px;
+}
+
+.resources-upload {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+
+
+  .file-input {
+    position: absolute;
+    width: 50%;
+    height: 50px;
+    opacity: 0;
+    cursor: pointer;
+  }
+}
+
+.resources-section {
+  margin-top: 20px;
+  display: flex;
+  gap: 30px;
+
+  .resource {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+    .delete-resource {
+      position: absolute;
+      top: -20px;
+      right: -10px;
+      z-index: 1000;
+    }
+  }
+}

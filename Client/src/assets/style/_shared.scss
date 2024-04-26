@@ -1,0 +1,246 @@
+@use '../style/variables';
+@use '../style/typography';
+@use '../style/breakpoints';
+
+.details {
+  margin: 0 auto;
+  display: flex;
+  justify-content: center;
+
+  h1,h2,h3,h4,h5,h6 {
+    margin-bottom: 20px;
+  }
+
+  h1 {
+    font-size: 60px;
+  }
+
+  h2 {
+    font-size: 50px;
+  }
+
+  h4 {
+    font-size: 40px;
+  }
+
+  h5 {
+    font-size: 30px;
+  }
+
+  a {
+    color: variables.$tertiary-color !important;
+    text-decoration: unset;
+  }
+
+  .content-details {
+    margin-bottom: 50px;
+    display: flex;
+    flex-direction: column;
+    gap: 40px;
+    text-align: justify;
+    max-width: 1000px;
+
+    .lesson {
+
+      video {
+        width: 100%;
+      }
+    }
+
+    .description {
+      display: flex;
+      flex-direction: column;
+      text-align: justify;
+
+      h1{
+        color: variables.$primary-color;
+        font-weight: 400;
+      }
+
+      p{
+        font-size: 21px;
+      }
+    }
+
+    .elements {
+      display:flex;
+      flex-direction: column-reverse;
+    }
+  }
+
+  .author-details {
+    display: flex;
+    flex-direction: column;
+    gap: 30px;
+    margin-bottom: 50px;
+
+    .author-profile-image-and-name {
+      display: flex;
+      align-items: center;
+      gap: 15px;
+      cursor: pointer;
+
+      .author-profile-image {
+        width: 100px;
+        height: 100px;
+        object-fit: cover;
+        border-radius: 50%;
+      }
+
+      .author-name {
+        font-size: typography.$font-size-3xl;
+      }
+    }
+
+    .author-bio {
+      width: 70%;
+    }
+
+    .materials-by-creator {
+      display: flex;
+      flex-direction: column;
+      gap: 30px;
+
+      h4 {
+        font-size: typography.$font-size-xl;
+        font-weight: typography.$bold;
+        margin-bottom: 20px;
+      }
+
+      .material-by-creator {
+        display: flex;
+        align-items: center;
+        gap: 30px;
+        cursor: pointer;
+        padding-right: 20px;
+
+        &-cover-image {
+          display: flex;
+          align-items: center;
+          z-index: 1000;
+
+          img {
+            width: 150px;
+            height: 150px;
+            object-fit: cover;
+          }
+        }
+
+        .view {
+          z-index: 1000;
+        }
+
+      }
+
+      .material-by-creator:hover {
+        box-shadow: 0px 5px 5px variables.$primary-color;
+        transition: 0.5s;
+      }
+    }
+  }
+}
+
+@include breakpoints.media-query(xs, sm){
+  .details {
+    margin-top: 50px;
+    padding-inline: 50px;
+
+    .content-details {
+      max-width: 350px;
+
+      .elements {
+        grid-template-columns: 100%;
+      }
+
+    }
+
+    .author-details {
+
+      .author-profile-image-and-name {
+        .author-name {
+          font-size: typography.$font-size-3xl-m;
+        }
+      }
+
+      .material-by-creator {
+        flex-direction: column;
+        justify-content: start;
+        align-items: start;
+
+        .material-by-creator-cover-image {
+          padding: 0;
+          width: 100%;
+
+          img {
+            width: 100%;
+          }
+        }
+      }
+    }
+  }
+}
+
+@include breakpoints.media-query(sm, md){
+  .details {
+    margin-top: 50px;
+
+    .content-details {
+      max-width: 500px;
+
+      .elements {
+        grid-template-columns: 100%;
+      }
+
+    }
+
+    .author-details {
+
+      .author-profile-image-and-name {
+        .author-name {
+          font-size: typography.$font-size-3xl-m;
+        }
+      }
+    }
+  }
+}
+
+@include breakpoints.media-query(md, lg){
+  .details {
+    margin-top: 50px;
+
+    .content-details {
+      max-width: 650px;
+
+      .elements {
+        grid-template-columns: 100%;
+      }
+
+    }
+
+    .author-details {
+
+      .author-profile-image-and-name {
+        .author-name {
+          font-size: typography.$font-size-3xl-m;
+        }
+      }
+    }
+  }
+}
+
+@include breakpoints.media-query(lg, xl){
+  .details {
+    margin-top: 50px;
+
+    .content-details {
+      max-width: 800px;
+    }
+  }
+}
+
+@include breakpoints.media-query(xl, xxl){
+  .details {
+    margin-top: 50px;
+
+  }
+}

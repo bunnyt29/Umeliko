@@ -1,0 +1,53 @@
+@use '../../../../../assets/style/typography';
+@use '../../../../../assets/style/variables';
+
+.profile-information-holder {
+  margin-top: 20px;
+  padding-inline: 200px;
+
+  .profile-main-information {
+    margin-block: 50px;
+    flex-direction: column;
+
+    .profile-following-activity {
+      display: flex;
+      gap: 10px;
+
+      .following-box {
+        position: relative;
+        padding: 5px 10px;
+        display: flex;
+        gap: 5px;
+        background-color: variables.$tertiary-color;
+        border-radius: 10px;
+        cursor: pointer;
+
+        .number {
+          font-weight: typography.$medium;
+          font-size: 20px;
+        }
+      }
+    }
+
+    .profile-name-and-username {
+      display: flex;
+      align-items: flex-end;
+      gap: 10px;
+
+      .profile-name {
+        font-size: typography.$font-size-xl;
+      }
+
+      .profile-username {
+        background-color: variables.$tertiary-color;
+        padding: 5px 10px;
+        border-radius: 5px;
+      }
+    }
+
+    .profile-bio {
+      width: 80ch;
+      text-align: justify;
+    }
+  }
+}

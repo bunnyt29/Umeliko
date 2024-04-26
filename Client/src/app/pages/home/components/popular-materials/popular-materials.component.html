@@ -1,0 +1,16 @@
+<div class="popular-materials">
+    <h2>Материали, които може да харесате</h2>
+    <div class="materials">
+        <div class="material"
+             routerLink="/materials/material.id"
+             *ngFor="let material of materials | slice:0:3; let i = index"
+             [ngClass]="i%2==0 ? 'material-odd' : 'material-even' ">
+              <h3>{{ material.banner.title }}</h3>
+              <p>{{ material.banner.description }}</p>
+              <div class="material-creator">
+                  <img [src]="material.creator.imageUrl" alt="Снимка на потребителя">
+                  <p>{{ material.creator.firstName }} {{ material.creator.lastName}}</p>
+              </div>
+        </div>
+    </div>
+</div>

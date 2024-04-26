@@ -1,0 +1,8 @@
+<div class="keywords-holder" *ngIf="material.banner.keywords.length != 0">
+  <h3>Ключови думи</h3>
+  <div class="keywords">
+    <div *ngFor="let keyword of material.banner.keywords">
+      <p class="keyword">{{ convertKeyword(keyword.name) }}</p>
+    </div>
+  </div>
+</div>

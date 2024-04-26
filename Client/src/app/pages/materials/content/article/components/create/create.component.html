@@ -1,0 +1,15 @@
+<navigation-menu></navigation-menu>
+<material-title></material-title>
+<form class="content-holder"
+      [formGroup]="articleForm"
+      (ngSubmit)="create()">
+  <div class="content">
+    <h3>Съдържание</h3>
+    <app-editor formControlName="content"></app-editor>
+  </div>
+  <create-resources></create-resources>
+  <div class="content-save-button">
+    <button class="button-primary" type="submit">Запази</button>
+  </div>
+</form>
+

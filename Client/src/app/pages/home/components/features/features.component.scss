@@ -1,0 +1,115 @@
+@use '../../../../../assets/style/variables';
+@use '../../../../../assets/style/typography';
+@use '../../../../../assets/style/breakpoints';
+
+.features-holder {
+  padding: variables.$wrapper;
+  background: linear-gradient(to right, variables.$primary-color 50%, variables.$tertiary-color 50%);
+
+  h2 {
+    margin-bottom: 70px;
+    text-align: center;
+    color: white;
+  }
+
+  .features {
+    display: flex;
+
+    .features-column {
+      width: 50%;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+
+      &-list {
+        display: flex;
+        flex-direction: column;
+        gap: 30px;
+
+        &-feature {
+          width: fit-content;
+          padding: 40px 20px;
+          display: grid;
+          grid-template-columns: 1fr 2fr;
+          place-items: center;
+          gap: 15px;
+          background-color: white;
+          border-radius: 15px;
+
+          h3 {
+            width: 10ch;
+            font-size: typography.$font-size-lg;
+          }
+        }
+      }
+
+      &-image {
+        width: 50%;
+
+        img {
+          width: 100%;
+        }
+      }
+    }
+
+    .reversed-column {
+      flex-direction: row-reverse;
+    }
+  }
+}
+
+@include breakpoints.media-query(xs, lg) {
+
+  .features-holder {
+    padding: 50px 0 0 0;
+    background: variables.$primary-color;
+
+    .features {
+      flex-direction: column;
+
+      .features-column {
+        width: 100%;
+        flex-direction: column-reverse;
+        background-color: variables.$primary-color;
+
+        &-list {
+          display: grid;
+          grid-template-columns: 1fr 1fr;
+          gap: 5px;
+
+          &-feature {
+            padding: 20px 40px;
+            grid-template-columns: 100%;
+
+            h3 {
+              width: 10ch;
+              font-size: typography.$font-size-lg-m;
+              text-align: center;
+            }
+
+            img {
+              width: 50px;
+            }
+
+          }
+        }
+
+        &-image {
+          display: flex;
+          justify-content: center;
+          width: 100%;
+
+          img {
+            width: 300px;
+          }
+        }
+      }
+
+      .reversed-column {
+        padding-top: 5px;
+        flex-direction: column;
+        background-color: variables.$tertiary-color;
+      }
+    }
+  }
+}

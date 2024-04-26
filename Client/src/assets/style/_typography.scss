@@ -1,0 +1,213 @@
+@use './variables';
+@use './breakpoints';
+@import url('https://fonts.googleapis.com/css2?family=Oswald:wght@300;400;500;600;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Pacifico&display=swap');
+
+//Desktop typography
+
+/* Font families */
+$primary-font-family: 'Oswald';
+$secondary-font-family: 'Pacifico';
+
+/* Font sizes */
+$font-size-sm: 1rem;
+$font-size-md: 1.125rem;
+$font-size-lg: 1.6rem;
+$font-size-xl: 1.875rem;
+$font-size-2xl: 2.5rem;
+$font-size-3xl: 3.125rem;
+$font-size-4xl: 3.75rem;
+$font-size-5xl: 4rem;
+$font-size-6xl: 6.25rem;
+
+/* Font weights */
+$light: 300;
+$medium: 500;
+$semi-bold: 600;
+$bold: 700;
+
+/* Line heights. */
+$line-height-sm: 2rem;
+$line-height-lg: 2.81rem;
+
+/* Letter spacings. */
+$letter-spacing-sm: 0.05em;
+$letter-spacing-md: 0.1em;
+
+//Mobile typography
+/* Font sizes */
+$font-size-sm-m: 0.75rem;
+$font-size-md-m: 1rem;
+$font-size-lg-m: 1.25rem;
+$font-size-xl-m: 1.6rem;
+$font-size-2xl-m: 1.875rem;
+$font-size-3xl-m: 2rem;
+$font-size-4xl-m: 2.25rem;
+$font-size-5xl-m: 3.75rem;
+$font-size-6xl-m: 4rem;
+
+
+* {
+    font-family: $primary-font-family;
+    color: variables.$primary-color;
+}
+
+h1{
+    font-size: $font-size-6xl;
+    font-weight: $bold;
+}
+
+h2{
+    font-size: $font-size-5xl;
+}
+
+h3{
+    font-size: $font-size-4xl;
+}
+
+h4{
+    font-size: $font-size-3xl;
+}
+
+h5{
+    font-size: $font-size-2xl;
+}
+
+label{
+    font-size: $font-size-xl;
+}
+
+input{
+    font-size: $font-size-md;
+}
+
+textarea {
+  resize: none;
+  overflow: hidden;
+}
+
+option, select{
+    font-family: $primary-font-family;
+    font-size: $font-size-md;
+}
+
+button {
+    font-size: $font-size-sm;
+}
+
+p {
+    line-height: $line-height-sm;
+}
+
+@include breakpoints.media-query(xs, sm){
+
+  h1{
+    font-size: $font-size-6xl-m;
+  }
+
+  h2{
+    font-size: $font-size-5xl-m;
+  }
+
+  h3{
+    font-size: $font-size-4xl-m;
+  }
+
+  h4{
+    font-size: $font-size-3xl-m;
+  }
+
+  h5{
+    font-size: $font-size-2xl-m;
+  }
+
+  p {
+    font-size: $font-size-sm-m;
+  }
+
+  button {
+    font-size: $font-size-sm-m;
+  }
+
+}
+
+@include breakpoints.media-query(sm, md){
+
+  h1{
+    font-size: $font-size-6xl-m;
+    line-height: 1.25;
+  }
+
+  h2{
+    font-size: $font-size-5xl-m;
+  }
+
+  h3{
+    font-size: $font-size-4xl-m;
+  }
+
+  h4{
+    font-size: $font-size-3xl-m;
+  }
+
+  h5{
+    font-size: $font-size-2xl-m;
+  }
+
+  button {
+    font-size: $font-size-sm-m;
+  }
+
+}
+
+@include breakpoints.media-query(md, lg){
+
+  h1{
+    font-size: $font-size-6xl-m;
+  }
+
+  h2{
+    font-size: $font-size-5xl-m;
+  }
+
+  h3{
+    font-size: $font-size-4xl-m;
+  }
+
+  h4{
+    font-size: $font-size-3xl-m;
+  }
+
+  h5{
+    font-size: $font-size-2xl-m;
+  }
+
+  button {
+    font-size: $font-size-sm-m;
+  }
+
+}
+
+@include breakpoints.media-query(lg, xl){
+
+  h1{
+    font-size: $font-size-6xl-m;
+  }
+
+  h2{
+    font-size: $font-size-5xl-m;
+  }
+
+  h3{
+    font-size: $font-size-4xl-m;
+  }
+
+  h4{
+    font-size: $font-size-3xl-m;
+  }
+
+  h5{
+    font-size: $font-size-2xl-m;
+  }
+
+}

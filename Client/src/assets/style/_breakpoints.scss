@@ -1,0 +1,32 @@
+$breakpoints: (
+  xs: 0,    // Extra small devices
+  sm: 576px, // Small devices
+  md: 768px, // Medium devices
+  lg: 992px, // Large devices
+  xl: 1200px, // Extra large devices
+  xxl: 1400px, // XX-Large devices
+  xxxl: 1600px
+);
+
+// Mixin for media queries with range support
+@mixin media-query($lower: null, $upper: null) {
+  @if $lower == null and $upper == null {
+    @warn "You must provide at least one limit for the media-query mixin.";
+  }
+  @else if $lower != null and $upper == null {
+    @media (min-width: map-get($breakpoints, $lower)) {
+      @content;
+    }
+  }
+  @else if $lower == null and $upper != null {
+    @media (max-width: map-get($breakpoints, $upper) - 1px) {
+      @content;
+    }
+  }
+  @else {
+    @media (min-width: map-get($breakpoints, $lower)) and (max-width: map-get($breakpoints, $upper) - 1px) {
+      @content;
+    }
+  }
+}
+

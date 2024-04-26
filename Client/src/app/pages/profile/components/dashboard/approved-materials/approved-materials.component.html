@@ -1,0 +1,42 @@
+<h2>Материали</h2>
+<div class="all-materials">
+    <div *ngFor="let material of materials">
+        <div class="banner">
+            <div class="banner-image">
+              <img class="banner-cover-image" [src]="material.banner.coverImageUrl" alt="Заглавна снимка">
+            </div>
+            <div class="banner-body">
+              <div>
+                <div class="banner-interactions">
+                  <div class="banner-creator" (click)="viewCreatorProfile(material.creator.id)">
+                    <img
+                      [src]="material.creator.imageUrl"
+                      alt="Профилна снимка"
+                      class="banner-creator-profile-image">
+                    <p>{{ material.creator.firstName }} {{ material.creator.lastName }}</p>
+                  </div>
+                </div>
+                <div class="banner-heading">
+                  <div class="banner-options">
+                    <p class="banner-type">{{ material.contentType | contentTypeToString }}</p>
+                    <p class="banner-category">{{ material.banner.category }}</p>
+                  </div>
+                  <h3 class="banner-title">{{ material.banner.title }}</h3>
+                </div>
+              </div>
+              <div class="helper">
+                <div class="banner-content">
+                  <p class="banner-description">{{ material.banner.description}}</p>
+                </div>
+                <div class="banner-functions">
+                  <button class="button-primary" type="submit" (click)="getDetails(material.contentType, material.id)">Разгледай</button>
+                </div>
+              </div>
+            </div>
+          </div>
+    </div>
+</div>
+<div *ngIf="materials.length == 0" class="no-materials" >
+  <img src="../../../../../../assets/images/no-materials.svg" alt="Няма създадени материали">
+  <h3>Няма създадени материали все още</h3>
+</div>

@@ -1,0 +1,16 @@
+@use '../../../../../assets/style/variables';
+@use '../../../../../assets/style/breakpoints';
+
+.navigation-hero {
+  padding-top: 10px;
+  height: calc(100vh - 10px);
+  background-color: variables.$primary-color;
+  position: relative;
+}
+
+@include breakpoints.media-query(xs, lg) {
+
+  .navigation-hero {
+    padding-top: 20px;
+  }
+}

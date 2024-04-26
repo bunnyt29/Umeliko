@@ -1,0 +1,12 @@
+@use '../../../../assets/style/variables';
+
+.created-for {
+  background-color: variables.$primary-color;
+  display: flex;
+  justify-content: center;
+
+  p {
+    color: white;
+  }
+
+}

@@ -1,0 +1,5 @@
+
+[*]
+
+# Microsoft .NET properties
+csharp_style_namespace_declarations = file_scoped:suggestion

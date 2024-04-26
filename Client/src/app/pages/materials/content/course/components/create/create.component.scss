@@ -1,0 +1,63 @@
+@use '../../../../../../../assets/style/variables';
+
+.section-holder {
+
+    .section {
+        margin-bottom: 30px;
+
+        &-title {
+            padding: 15px 30px;
+            display: flex;
+            align-items: center;
+            gap: 5px;
+            border-top-right-radius: 30px;
+            border-top-left-radius: 30px;
+            background-color: variables.$primary-color;
+
+            p {
+                font-size: 30px;
+                color: white;
+            }
+    
+            input {
+                width: 100%;
+                font-size: 30px;
+                color: white;
+            }
+        }
+    
+        &-content {
+            padding: 30px 60px;
+            display: flex;
+            flex-direction: column;
+            border-bottom-right-radius: 30px;
+            border-bottom-left-radius: 30px;
+            background-color: variables.$tertiary-color;
+
+            &-lesson {
+                margin-bottom: 15px;
+                display: flex;
+                justify-content: space-between;
+                align-items: center;
+            }
+
+            .add-lesson {
+                width: max-content;
+            }
+
+            .save-panel {
+                width: 100%;
+
+                .save {
+                    margin-top: 20px;
+                    padding: 5px 10px;
+                    float: right;
+                    width: max-content;
+                    background-color: variables.$primary-color;
+                    color: variables.$tertiary-color;
+                    border-radius: 10px;
+                }
+            }
+        }
+    }
+}

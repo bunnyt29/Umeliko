@@ -1,0 +1,36 @@
+.form-cover-image {
+  position: relative;
+  display: inline-block; 
+
+  .banner-cover-image:hover {
+    opacity: 50%;
+    transition: 20ms;
+    cursor: pointer;
+  }
+
+  .banner-cover-image-text {
+    position: absolute; 
+    top: 50%;
+    left: 50%;
+    cursor: pointer; /* Optional: Changes the cursor to a pointer when hovering over the text */
+    transform: translate(-50%, -50%);
+  }
+
+    /* You can remove the hover effect from the text as it's no longer necessary */
+  .banner-cover-image-text:hover {
+    background-image: none;
+  }
+
+  .banner-cover-image-text:hover::before { 
+    content: none; 
+  }
+}
+
+.form-cover-image:hover .banner-cover-image {
+  opacity: 50%;
+  transition: 20ms;
+  cursor: pointer;
+}
+
+
+

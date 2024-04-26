@@ -1,0 +1,60 @@
+@use '../../../../../assets/style/variables';
+@use '../../../../../assets/style/typography';
+@use '../../../../../assets/style/breakpoints';
+
+.login-and-register-container {
+    position: relative;
+    background: linear-gradient(variables.$primary-color, variables.$tertiary-color);
+    height: 100vh;
+
+    .login-and-register-holder {
+        position: relative;
+        left: 50%;
+        top: 50%;
+        transform: translate(-50%, -50%);
+        padding-block: 20px;
+        padding-left: 90px;
+        width: 80%;
+        height: 90%;
+        background-color: white;
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        border-radius: 30px;
+        align-items: center;
+    }
+}
+
+@include breakpoints.media-query(xs, sm) {
+
+  .login-and-register-container {
+
+    .login-and-register-holder {
+      grid-template-columns: 1fr;
+      padding-inline: 30px;
+    }
+  }
+
+}
+
+@include breakpoints.media-query(sm, md) {
+
+  .login-and-register-container {
+
+    .login-and-register-holder {
+      grid-template-columns: 1fr;
+      padding-inline: 30px;
+    }
+  }
+
+}
+
+@include breakpoints.media-query(md, lg) {
+
+  .login-and-register-container {
+
+    .login-and-register-holder {
+      padding-inline: variables.$wrapper-for-mobile;
+    }
+  }
+
+}

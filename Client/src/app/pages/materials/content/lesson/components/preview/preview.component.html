@@ -1,0 +1,19 @@
+<div class="details">
+  <div class="content-details">
+    <div>
+      <material-metadata [material]="material"></material-metadata>
+      <div class="lesson">
+        <video-player [videoUrl]="videoUrl"></video-player>
+      </div>
+    </div>
+    <div class="description">
+      <h1 class="description-title">{{ material.banner.title }}</h1>
+      <div class="description-content" [innerHTML]="material.lesson.content"></div>
+    </div>
+    <div class="elements">
+      <all-resources [resources]="material.lesson.resources"></all-resources>
+      <all-keywords [material]="material"></all-keywords>
+    </div>
+  </div>
+</div>
+<created-for></created-for>

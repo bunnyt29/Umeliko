@@ -1,0 +1,14 @@
+@use '../../../../assets/style/variables';
+
+.banner {
+    width: 50%;
+    height: 50%;
+}
+
+ul li {
+    font-size: 20px;
+}
+
+span {
+    color: variables.$tertiary-color;
+}

@@ -1,0 +1,181 @@
+@use '../../../../../../assets/style/variables';
+@use '../../../../../../assets/style/typography';
+@use '../../../../../../assets/style/breakpoints';
+
+p {
+  font-size: typography.$font-size-lg;
+  color: variables.$tertiary-color;
+}
+
+.options {
+  margin-top: 30px;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 70px;
+
+  .option-material-type {
+    padding: 60px 20px 20px 50px;
+    display: grid;
+    grid-template-columns: 3fr 5fr 2fr;
+    grid-template-rows: 60% 40%;
+    place-items: center;
+    background-color: variables.$primary-color;
+    border-radius: 30px;
+
+    .material-image, h2{
+      grid-column: 1;
+      grid-row: 1;
+    }
+
+    h3 {
+      grid-column: 2;
+      grid-row: 1;
+      color: white;
+    }
+
+    .add-material {
+      grid-column: 3;
+      grid-row: 2;
+      cursor: pointer;
+    }
+  }
+
+  .course {
+    opacity: 50%;
+  }
+}
+
+@include breakpoints.media-query(xs, sm) {
+  .options {
+    grid-template-columns: 100%;
+
+    .option-material-type {
+
+      .material-image {
+        width: 100%;
+      }
+
+      .add-material {
+        width: 100%;
+      }
+    }
+  }
+}
+
+@include breakpoints.media-query(sm, md) {
+  .options {
+    margin-top: 30px;
+    display: grid;
+    grid-template-columns: 100%;
+    gap: 40px;
+
+    .option-material-type {
+      padding: 40px 80px;
+      display: flex;
+      justify-content: space-around;
+      align-items: center;
+      gap: 10px;
+
+      h3 {
+        grid-column: 2;
+        grid-row: 1;
+        color: white;
+      }
+
+      .material-image {
+        scale: 70%;
+      }
+
+      .add-material {
+        margin-left: 20px;
+        width: 50px;
+        height: 50px;
+      }
+    }
+
+    .course {
+      opacity: 50%;
+    }
+  }
+}
+
+@include breakpoints.media-query(md, lg) {
+
+  .options {
+    margin-top: 30px;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 40px;
+
+    .option-material-type {
+      padding: 20px 40px;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      gap: 10px;
+
+      .material-image{
+        display: none;
+      }
+
+      h3 {
+        grid-column: 2;
+        grid-row: 1;
+        color: white;
+      }
+
+      .add-material {
+        width: 30px;
+        height: 30px;
+      }
+    }
+
+    .course {
+      opacity: 50%;
+    }
+  }
+}
+
+@include breakpoints.media-query(lg, xl) {
+
+  .options {
+    gap: 15px;
+
+    .option-material-type {
+      h3 {
+        font-size: typography.$font-size-2xl;
+      }
+
+      .material-image {
+        width: 100%;
+      }
+
+      .add-material {
+        width: 100%;
+      }
+    }
+  }
+}
+
+@include breakpoints.media-query(xl, xxl) {
+  .options {
+    gap: 15px;
+
+    .option-material-type {
+
+      h3 {
+        font-size: typography.$font-size-2xl;
+      }
+
+      .material-image {
+        width: 100%;
+      }
+
+      .add-material {
+        width: 100%;
+      }
+    }
+  }
+}
+
+

@@ -1,0 +1,19 @@
+@use '../../../../../../assets/style/variables';
+@use '../../../../../../assets/style/breakpoints';
+
+.creations-title-section{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 15px;
+  margin-bottom: 142px;
+
+  p{
+    color: variables.$tertiary-color;
+    font-size: 30px;
+  }
+
+  h2 {
+    text-align: center;
+  }
+}

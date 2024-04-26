@@ -1,0 +1,23 @@
+<div class="keywords-holder">
+    <div class="keywords">
+      <div *ngFor="let keyword of keywords; let i = index">
+          <div>
+            <div class="keyword-holder">
+              <input class="keyword"
+                     type="text"
+                     placeholder="ключова дума"
+                     name="{{i}}"
+                     (click)="onClick($event)"
+                     (input)="onInput($event)"
+                     [value]="this.keywords[i]"
+                     (blur)="onBlur()">
+              <button type="button" class="delete-keyword" (click)="deleteKeyword(i)">-</button>
+            </div>
+          </div>
+      </div>
+      <div>
+        <button type="button" class="add-keyword" (click)="addKeyword()">+</button>
+      </div>
+    </div>
+</div>
+

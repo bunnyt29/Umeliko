@@ -1,0 +1,40 @@
+<navigation-menu></navigation-menu>
+<div class="profile-information-holder">
+    <div class="profile-main-information">
+      <img class="profile-image" [src]="creator.imageUrl" alt="Снимкаа на профила">
+      <div class="profile-following-activity">
+        <div class="following-box"
+            (click)="openModal('Последователи', followers)"
+            [attr.title]="followersTitle"
+            (mouseover)="updateTitle('followers')"
+            (mouseleave)="resetTitle()">
+          <p class="number">{{ numberOfFollowers }}</p>
+          <img src="../../../../../assets/images/followers.png" alt="Хората, които те следват">
+        </div>
+        <div class="following-box"
+            (click)="openModal('Следващи', following)"
+            [attr.title]="followingTitle"
+            (mouseover)="updateTitle('following')"
+            (mouseleave)="resetTitle()">
+          <p class="number">{{ numberOfFollowing }}</p>
+          <img src="../../../../../assets/images/following.png" alt="Хората, които следваш">
+        </div>
+        <button class="button-follow"
+                (click)="follow()"
+                *ngIf="!isFollowed">Последвай</button>
+        <button class="button-unfollow"
+                (click)="unfollow()"
+                *ngIf="isFollowed">Отследвай</button>
+      </div>
+      <modal [show]="showModal" [title]="modalTitle" [creators]="creatorsToShow" (onClose)="closeModal()"></modal>
+      <div class="profile-name-and-username">
+        <p class="profile-name">{{ creator.firstName }} {{ creator.lastName }}</p>
+        <span class="profile-username">{{ creator.userName }}</span>
+      </div>
+      <p class="profile-bio">{{ creator.bio }}</p>
+    </div>
+    <div class="profile-additional-information">
+       <approved-materials [creator]="creator"></approved-materials>
+    </div>
+</div>
+<created-for></created-for>

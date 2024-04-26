@@ -1,0 +1,14 @@
+<div class="custom-dialog-backdrop" *ngIf="isVisible">
+  <div class="custom-dialog">
+    <div class="custom-dialog-image">
+      <img src="../../../../assets/images/confirm-deletion.svg" alt="Потвърди изтриването">
+    </div>
+    <div class="custom-dialog-content">
+      <p>Сигурен ли си, че искаш да изтриеш този материал?</p>
+    </div>
+    <div class="custom-dialog-actions">
+      <button class="button-secondary" (click)="closeDialog(false)">Откажи</button>
+      <button class="button-primary" (click)="closeDialog(true)">Изтрий</button>
+    </div>
+  </div>
+</div>

@@ -1,0 +1,22 @@
+@use '../../../../../assets/style/variables';
+@use '../../../../../assets/style/typography';
+
+.confirm-email-holder {
+  height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: linear-gradient(variables.$primary-color, variables.$tertiary-color);
+
+  .confirm-email {
+
+    img {
+      width: 100%;
+    }
+
+    &-text {
+      margin-bottom: 20px;
+      font-size: typography.$font-size-3xl;
+    }
+  }
+}

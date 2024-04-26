@@ -1,0 +1,101 @@
+@use '../../../../../assets/style/variables';
+@use '../../../../../assets/style/typography';
+@use '../../../../../assets/style/breakpoints';
+
+.popular-materials {
+  padding-block: variables.$wrapper;
+  background-color: variables.$secondary-color;
+
+  h2 {
+    margin: 0  0 100px variables.$wrapper;
+  }
+
+  .materials {
+    padding-inline: 50px;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 20px;
+    cursor: pointer;
+
+    .material {
+      padding: 60px 30px 30px 30px;
+      display: grid;
+      grid-template-rows: 3fr 5fr 2fr;
+      height: 350px;
+      border-radius: 30px;
+
+      h3 {
+        font-size: typography.$font-size-xl;
+        margin-bottom: 30px;
+        grid-row: 1;
+      }
+
+      p {
+        grid-row: 2;
+      }
+
+      &-creator {
+        grid-row: 3;
+        display: flex;
+        align-items: center;
+        gap: 15px;
+
+        img {
+          width: 50px;
+          height: 50px;
+          object-fit: cover;
+          border-radius: 50%;
+        }
+      }
+    }
+
+    .material-odd {
+      background-color: variables.$primary-color;
+
+      h3, p {
+        color: white;
+      }
+    }
+
+    .material-even {
+      background-color: variables.$tertiary-color;
+    }
+  }
+
+  @keyframes material {
+    0% { transform: translateX(0); }
+    33% { transform: translateX(-33.33%); }
+    66% { transform: translateX(-66.66%); }
+    100% { transform: translateX(-100%); }
+  }
+}
+
+@include breakpoints.media-query(xs, lg) {
+  .popular-materials {
+    padding-block: variables.$wrapper-for-mobile;
+
+    h2{
+      margin: variables.$wrapper-for-mobile;
+    }
+
+    .materials {
+      grid-template-columns: 1fr;
+
+      .material {
+        height: auto;
+      }
+    }
+  }
+}
+
+@include breakpoints.media-query(lg, xl) {
+  .popular-materials {
+
+    .materials {
+
+      .material {
+        height: 500px;
+      }
+    }
+  }
+}

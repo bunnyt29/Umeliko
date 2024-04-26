@@ -1,0 +1,14 @@
+<navigation-menu></navigation-menu>
+<material-title></material-title>
+<form class="content-holder" [formGroup]="articleForm">
+  <div class="content">
+    <h3>Съдържание</h3>
+    <app-editor formControlName="content" [htmlContent]="article.content"></app-editor>
+  </div>
+  <create-resources></create-resources>
+  <edit-resources [uploadedResources]="uploadedResources"></edit-resources>
+  <div class="content-save-button">
+    <button class="button-primary" (click)="editArticle()">Запази</button>
+  </div>
+</form>
+
