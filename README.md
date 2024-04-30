@@ -2,8 +2,7 @@ Umeliko is an open social network. It provides an environment where our users ca
 The main functionality that Umeliko has is aimed at creating, sharing and consuming useful and educational content that connects users with common interests and talents.
 
 Authors:
-Stefani Kocheva
-Tania Bojkova
+Stefani Kocheva & Tania Bojkova
 
 Find the application on:
 https://umeliko.web.app/home
